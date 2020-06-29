@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     });
     
     
-    Account.prototype.toJson = function(){``
+    Account.prototype.toJSON = function(){``
         const values = {...this.get() }; 
         delete values.password;
         return values;
