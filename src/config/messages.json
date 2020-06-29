@@ -1,0 +1,14 @@
+{
+    "response.json_ok":" Requisição efetuada com sucesso",
+    "response.json_bad_request":" Requisição inválida",
+    "response.json_unauthorized":" Não autorizado",
+    "response.json_not_found":" Não encontrado",
+    "response.json_server_error":"Erro no servidor",
+    "account.signup.email_exists" : "Email já existe",
+    "account.signup.success" : "Cadastro Efetuado com sucesso",
+    "account.signup.password_confirmation.any.required" : "Confirmação de senha é obrigatória",
+    "account.signup.password.string.empty" : "Senha é obrigatória",
+    "account.signup.password.string.pattern.base" : "Senha deve ter no minimo 8 caracteres",
+    "account.signup.email.string.email" : "Email invalido",
+    "account.signup.email.string.empty": "Email é obrigatório "
+}
