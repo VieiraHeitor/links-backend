@@ -31,7 +31,7 @@ router.post('/signup',accountSignUp , async (req, res)=> {
     if(account) return res.jsonBadRequest(null, getMessage('account.signup.email_exists'));
 
     const hash = bcrypt.hashSync(password, saltRounds);
-    const newAccount = await Account.create({email, password: hash});
+    const newAccount = await Account.create({email, password: hash,jwtVersion:0});
     
     const token = generateJwt({id:newAccount.id});
     const refreshToken = generateRefreshJwt({id:newAccount.id, version: newAccount.jwtVersion});
