@@ -53,12 +53,15 @@ router.put('/:id', async (req,res) =>{
     return res.jsonOK(link);
 });
 router.delete('/:id', async (req,res) =>{
-    const {accountId} = req;
+    const { accountId} = req;
+    const {id} =req.params;
 
     const link = await Link.findOne({where: {id,accountId}} );
     if (!link) return res.jsonNotFound();
 
     await link.destroy();
+    
+    return res.jsonOK();
 });
 
 module.exports = router;
