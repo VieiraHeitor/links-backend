@@ -12,7 +12,7 @@ const chechkJwt = (req, res, next) =>{
 
     const token = getTokenFromHeaders(req.headers);
     if(!token) {
-    return res.jsonUnuathorized(null, 'invalid token');
+    return res.jsonUnauthorized(null, 'invalid token');
     }
 
     try{
@@ -20,9 +20,8 @@ const chechkJwt = (req, res, next) =>{
         req.accountId = decoded.id;
         next();
     }catch(error){
-        return res.jsonUnuathorized(null, 'invalid token');
+        return res.jsonUnauthorized(null, 'invalid token');
     }
-    // console.log('decoded', newDate(decoded.exp*1000));
 
 };
 

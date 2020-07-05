@@ -24,7 +24,7 @@ const jsonBadRequest = function(data, message, metadata){
     this.type(TYPE_JSON);
     return this.json({message, data, metadata, status : status});
 }
-const jsonUnuathorized = function(data, message, metadata){
+const jsonUnauthorized = function(data, message, metadata){
     const status = STATUS_CODE_UNAUTHORIZED
     message = (message) ? message :getMessage('response.json_unauthorized');
     metadata = (metadata) ? metadata : {};
@@ -55,7 +55,7 @@ const jsonServerError = function(data, message, metadata){
 const response = (req, res, next) => {
     res.jsonOK = jsonOK;
     res.jsonBadRequest = jsonBadRequest;
-    res.jsonUnuathorized = jsonUnuathorized;
+    res.jsonUnauthorized = jsonUnauthorized;
     res.jsonNotFound = jsonNotFound;
     res.jsonServerError = jsonServerError;
 
